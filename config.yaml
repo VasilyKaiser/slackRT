@@ -1,0 +1,7 @@
+# Paste your bot user token here
+OAUTH_TOKEN: "###-###########-#############-###############"
+# Paste your channel id here
+CHANNEL_ID: "#########"
+# Paste your app signing secret here
+SIGNING_SECRET: "########################"
+PORT: "8080"
