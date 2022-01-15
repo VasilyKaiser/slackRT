@@ -1,0 +1,2 @@
+# slackRT
+ Slack remote terminal
