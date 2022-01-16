@@ -102,11 +102,15 @@ func handler(w http.ResponseWriter, r *http.Request) {
 			} else {
 				out, err = exec.Command(command[0]).CombinedOutput()
 			}
-			message := string(out)
-			if err != nil {
-				message += "\n" + err.Error()
+			if len(out) > 0 {
+				message := string(out)
+				if err != nil {
+					message += "\n" + err.Error()
+				}
+				sendMessage(message)
+			} else {
+				sendMessage("Executed, but didn't get response from command yet.")
 			}
-			sendMessage(message)
 		} else {
 			sendMessage("I need an argument to the `/sh` command!\nExample: `/sh del`")
 		}
