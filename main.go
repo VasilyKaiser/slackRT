@@ -108,6 +108,8 @@ func handler(w http.ResponseWriter, r *http.Request) {
 					message += "\n" + err.Error()
 				}
 				sendMessage(message)
+			} else if err != nil {
+				sendMessage(err.Error())
 			} else {
 				sendMessage("Executed, but didn't get response from command yet.")
 			}
